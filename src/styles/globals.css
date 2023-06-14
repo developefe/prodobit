@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(117.38deg, #e6edeb 2.39%, #feedee 99.58%);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Sidebar */
+.sidebar .MuiAccordionSummary-content {
+  margin: 0;
+}
+
+.sidebar-dropdown {
+  position: relative;
+}
+
+.sidebar-dropdown > *:last-child:before {
+  content: "";
+  position: absolute;
+  bottom: 23px;
+  left: -8px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #b1b2b5;
+  border-top: 1px solid #ffffff00;
+  border-left: 1px solid #b1b2b5;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.sidebar-dropdown > *:last-child {
+  position: relative;
+}
+
+.sidebar-dropdown:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -8px;
+  bottom: 33px;
+  background: #b1b2b5;
+  width: 1px;
+}
+
+.sidebar-dropdown:after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -13px;
+  width: 11px;
+  height: 11px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOSA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMy40MTgyOCAxLjA5ODQxQzMuNTA1MjggMC45NDM3OTcgMy42MzE4NSAwLjgxNTExMSAzLjc4NSAwLjcyNTU1OEMzLjkzODE1IDAuNjM2MDA0IDQuMTEyMzcgMC41ODg4MDYgNC4yODk3OCAwLjU4ODgwNkM0LjQ2NzE5IDAuNTg4ODA2IDQuNjQxNDEgMC42MzYwMDQgNC43OTQ1NiAwLjcyNTU1OEM0Ljk0NzcxIDAuODE1MTExIDUuMDc0MjggMC45NDM3OTcgNS4xNjEyOCAxLjA5ODQxTDcuOTUxMjggNi4wNTg0MUM4LjAzNzAzIDYuMjEwNTUgOC4wODE0NCA2LjM4MjUgOC4wODAwOSA2LjU1NzE0QzguMDc4NzQgNi43MzE3OCA4LjAzMTY3IDYuOTAzMDIgNy45NDM1OCA3LjA1MzgyQzcuODU1NDkgNy4yMDQ2MiA3LjcyOTQ0IDcuMzI5NzIgNy41Nzc5OCA3LjQxNjY3QzcuNDI2NTEgNy41MDM2MiA3LjI1NDkyIDcuNTQ5MzggNy4wODAyOCA3LjU0OTQxSDEuNTAwMjhDMS4zMjU2OSA3LjU0OTQ2IDEuMTU0MTQgNy41MDM4IDEuMDAyNjcgNy40MTY5OEMwLjg1MTIxMSA3LjMzMDE1IDAuNzI1MTE4IDcuMjA1MTggMC42MzY5MzYgNy4wNTQ1MUMwLjU0ODc1NCA2LjkwMzgzIDAuNTAxNTU3IDYuNzMyNjkgMC41MDAwMzggNi41NTgxMUMwLjQ5ODUxOSA2LjM4MzUzIDAuNTQyNzMxIDYuMjExNiAwLjYyODI3OCA2LjA1OTQxTDMuNDE4MjggMS4wOTg0MVoiIGZpbGw9IiNCMUIyQjUiLz4KPC9zdmc+Cg==");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sidebar-dropdown.sidebar-dropdown-2:after {
+  left: -19px;
+  top: -15px;
+}
+
+.sidebar-dropdown.sidebar-dropdown-2 > *:last-child:before {
+  left: -14px;
+  bottom: 18px;
+}
+
+.sidebar-dropdown.sidebar-dropdown-2:before {
+  left: -14px;
+  bottom: 27px;
+  top: -5px;
+}
+
+.sidebar-dropdown.sidebar-dropdown-2 > li:after {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: -13px;
+  width: 7px;
+  height: 1px;
+  background: #b1b2b5;
+}
+
+.sidebar-dropdown.sidebar-dropdown-2 > li {
+  position: relative;
+}
+
+.sidebar-dropdown.sidebar-dropdown-2 > li:last-child:after {
+  display: none;
+}
+
+/* Tab */
+.MuiTab-root {
+  padding: 0 5px;
+  margin: 0 15px;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(0 0 0 / 50%);
+  text-transform: initial;
+  min-width: initial;
+}
+
+.MuiTab-root.Mui-selected {
+  color: #198870;
+}
+
+.MuiTabs-indicator {
+  background: #198870;
+  height: 3px;
+}
+
+/* Table */
+.table-container > .MuiBox-root {
+  padding: 0;
+}
+
+.MuiTableCell-root {
+  border-bottom: none;
+  background: none;
+}
+
+table.MuiTable-root {
+  overflow: hidden;
+}
+
+thead .MuiTableCell-root + .MuiTableCell-root > span {
+  border-left: 1px solid #87868869;
+  padding-left: 15px;
+}
+
+thead .MuiTableCell-root:nth-child(2) .MuiButtonBase-root {
+  border-left: none;
+  padding-left: 0;
+}
+
+.MuiTableCell-root .MuiButtonBase-root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: initial;
+}
+
+thead .MuiTableCell-root {
+  border-bottom: 1px solid #87868830;
+}
+
+thead .MuiTableCell-root + .MuiTableCell-root {
+  padding-left: 0;
+}
+
+tbody .MuiTableCell-root {
+  padding: 24px 16px;
+}
