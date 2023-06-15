@@ -5,11 +5,13 @@ import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 import pageBanner from "@/assets/img/page-banner.png";
 
 import TableList from "@/components/table-list";
 import Header from "@/layouts/header";
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -45,6 +47,13 @@ export default function Home() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  // For table select
+  const [age, setAge] = useState(10);
+
+  const selectHandleChange = (event) => {
+    setAge(event.target.value);
   };
 
   return (
@@ -300,10 +309,35 @@ export default function Home() {
                 <span className="block text-[12px] font-light text-gray-1100/50">
                   Gösterim
                 </span>
-                <select className="text-[15px] font-medium text-gray-1100 bg-transparent">
-                  <option value="30">30</option>
-                  <option value="60">60</option>
-                </select>
+                <FormControl fullWidth>
+                  <Select
+                    id="demo-simple-select"
+                    defaultValue={age}
+                    value={age}
+                    onChange={selectHandleChange}
+                    IconComponent={() => (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={12}
+                        height={12}
+                        fill="none"
+                        className="opacity-50"
+                      >
+                        <path
+                          stroke="#242529"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeMiterlimit={10}
+                          d="M9.96 4.475 6.7 7.735a.993.993 0 0 1-1.4 0l-3.26-3.26"
+                        />
+                      </svg>
+                    )}
+                  >
+                    <MenuItem value={10}>10</MenuItem>
+                    <MenuItem value={20}>20</MenuItem>
+                    <MenuItem value={30}>30</MenuItem>
+                  </Select>
+                </FormControl>
               </div>
             </div>
           </div>

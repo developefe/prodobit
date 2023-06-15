@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 import AddProductSteps from "@/components/add-product-steps";
+import { FormControl, MenuItem, Select } from "@mui/material";
 
 export default function Step1() {
+  // For Hour Select
+  const [age, setAge] = useState(10);
+
+  const selectHandleChange = (event) => {
+    setAge(event.target.value);
+  };
   return (
     <div className="flex flex-col">
       <AddProductSteps />
@@ -26,9 +33,35 @@ export default function Step1() {
           <div className="flex items-center justify-center">
             <span className="text-[15px] text-gray-1100/70">Seçimimi</span>
 
-            <select className="mx-[10px] text-[15px] font-medium text-gray-1100/70 bg-transparent">
-              <option value="12">12</option>
-            </select>
+            <FormControl fullWidth>
+                  <Select
+                    id="demo-simple-select"
+                    defaultValue={age}
+                    value={age}
+                    onChange={selectHandleChange}
+                    IconComponent={() => (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={12}
+                        height={12}
+                        fill="none"
+                        className="opacity-50"
+                      >
+                        <path
+                          stroke="#242529"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeMiterlimit={10}
+                          d="M9.96 4.475 6.7 7.735a.993.993 0 0 1-1.4 0l-3.26-3.26"
+                        />
+                      </svg>
+                    )}
+                  >
+                    <MenuItem value={10}>10</MenuItem>
+                    <MenuItem value={20}>20</MenuItem>
+                    <MenuItem value={30}>30</MenuItem>
+                  </Select>
+                </FormControl>
 
             <span className="text-[15px] text-gray-1100/70">
               saat boyunca hatırla

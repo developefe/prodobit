@@ -52,6 +52,7 @@ module.exports = {
       'blue-800': '#174666',
       'blue-900': '#11364e',
 
+      'red-10': '#B16D5C',
       'red-50': '#feedee',
       'red-100': '#fbc7ca',
       'red-200': '#f9acb0',
@@ -74,6 +75,7 @@ module.exports = {
       'yellow-800': '#8c6d19',
       'yellow-900': '#6b5413',
 
+      'green-10': '#E6EDEB',
       'green-50': '#e8f4f2',
       'green-100': '#b9ded6',
       'green-200': '#97cec2',

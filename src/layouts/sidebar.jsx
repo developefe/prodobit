@@ -235,7 +235,7 @@ export default function Sidebar() {
 
                         <li>
                           <Link
-                            href={"#"}
+                            href={"/oge-ekle/step-1"}
                             className="text-[20px] font-light text-gray-1100 py-[5px] flex items-center justify-between"
                           >
                             <div className="flex items-center flex-1 gap-[5px]">
