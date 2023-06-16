@@ -185,3 +185,30 @@ tbody .MuiTableCell-root {
 .MuiFormControl-root.step-2-select .MuiInputBase-root svg { right: 20px;}
 
 /* Mui Select */
+
+/* Mui Tabs */
+
+/* Step-3 --- */
+
+.step-3-tabs .MuiTab-root:first-child {
+    margin-left: 0;
+}
+
+.MuiTabs-root.step-3-tabs {min-height: 35px;}
+
+.step-3-tabs .MuiTab-root {
+  color: #000;
+  min-height: 35px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.step-3-tabs .MuiTabs-indicator {
+    height: 1px;
+    background: #2980B9;
+}
+
+.step-3-tab-panels .MuiBox-root{
+  padding: 0;
+}
