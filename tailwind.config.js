@@ -41,6 +41,7 @@ module.exports = {
       'gray-1000': '#39373a',
       'gray-1100': '#242529',
 
+      'blue-10': '#006ACB',
       'blue-50': '#eaf2f8',
       'blue-100': '#bdd8e9',
       'blue-200': '#9dc5df',
@@ -86,7 +87,8 @@ module.exports = {
       'green-700': '#146a57',
       'green-800': '#0f5244',
       'green-900': '#0c3f34',
-
+      
+      'orange-10': '#FF5F1B',
       'orange-50': '#fff1ea',
       'orange-100': '#ffd5bd',
       'orange-200': '#ffc09d',

@@ -6,7 +6,7 @@ import { FormControl, MenuItem, Select } from "@mui/material";
 import brandImgHolder from "@/assets/img/brand-image-holder.png";
 import excel from "@/assets/img/excel.svg";
 
-export default function Step1() {
+export default function Step2() {
   // For Brand Select
   var nike = "Nike";
   const [brand, setBrand] = useState(nike);

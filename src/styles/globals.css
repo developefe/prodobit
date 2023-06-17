@@ -176,13 +176,22 @@ tbody .MuiTableCell-root {
 .MuiFormControl-root {width: max-content; margin: 0 10px 0 2px;}
 .MuiFormControl-root .MuiOutlinedInput-notchedOutline { border: 0; padding: 0; }
 .MuiFormControl-root .MuiSelect-select { padding: 0; padding-right: 0 !important; width: 35px; }
-.MuiFormControl-root.step-2-select .MuiInputBase-root svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;}
 
 /* Step-2 --- */
 
 .MuiFormControl-root.step-2-select .MuiSelect-select { width: 55px; text-align: left; padding: 10px 45px 10px 35px!important; }
 .MuiFormControl-root.step-2-select { margin: 0; }
 .MuiFormControl-root.step-2-select .MuiInputBase-root svg { right: 20px;}
+.MuiFormControl-root.step-2-select .MuiInputBase-root svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;}
+
+/* Step-4 --- */
+
+.MuiFormControl-root.step-4-select { display: flex; align-items: center; justify-content: center; margin: 0; }
+.MuiFormControl-root.step-4-select .MuiSelect-select { width: max-content; min-width: 60px; text-align: left; padding: 7px 40px 7px 20px !important; font-size: 22px; font-weight: 800; line-height: 1; display: flex; align-items: center; gap: 5px;}
+.MuiFormControl-root.step-4-select .MuiSelect-select span { font-weight: 600; }
+.MuiFormControl-root.step-4-select .MuiInputBase-root svg { right: 20px;}
+.MuiFormControl-root.step-4-select .MuiInputBase-root svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;}
+.MuiFormControl-root.step-4-select .MuiInputBase-root { height: 100%; padding: 0; }
 
 /* Mui Select */
 
@@ -190,25 +199,12 @@ tbody .MuiTableCell-root {
 
 /* Step-3 --- */
 
-.step-3-tabs .MuiTab-root:first-child {
-    margin-left: 0;
-}
-
+.step-3-tabs .MuiTab-root:first-child { margin-left: 0; }
 .MuiTabs-root.step-3-tabs {min-height: 35px;}
+.step-3-tabs .MuiTab-root { color: #000; min-height: 35px; padding: 0; font-weight: 500; font-size: 15px; }
+.step-3-tabs .MuiTabs-indicator { height: 1px; background: #2980B9; }
+.step-3-tab-panels .MuiBox-root{ padding: 0; }
 
-.step-3-tabs .MuiTab-root {
-  color: #000;
-  min-height: 35px;
-  padding: 0;
-  font-weight: 500;
-  font-size: 15px;
-}
+/* Custom */
 
-.step-3-tabs .MuiTabs-indicator {
-    height: 1px;
-    background: #2980B9;
-}
-
-.step-3-tab-panels .MuiBox-root{
-  padding: 0;
-}
+.step-4-webkit::-webkit-scrollbar {width: 0; height: 0;}

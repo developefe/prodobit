@@ -3,28 +3,11 @@ import React, { useState } from "react";
 import AddProductSteps from "@/components/add-product-steps";
 import {
   Box,
-  FormControl,
-  MenuItem,
-  Select,
   Tab,
   Tabs,
-  Typography,
 } from "@mui/material";
 
-import brandImgHolder from "@/assets/img/brand-image-holder.png";
-import excel from "@/assets/img/excel.svg";
-
-import PropTypes from "prop-types";
-
-export default function Step1() {
-  // For Brand Select
-  var nike = "Nike";
-  const [brand, setBrand] = useState(nike);
-
-  const selectHandleChange = (event) => {
-    setBrand(event.target.value);
-  };
-
+export default function Step3() {
   // Tab value
   const [tabValue, setTabValue] = React.useState(0);
 
@@ -45,7 +28,7 @@ export default function Step1() {
       >
         {tabValue === index && (
           <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
+            <div>{children}</div>
           </Box>
         )}
       </div>
@@ -66,19 +49,16 @@ export default function Step1() {
           style={{ boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)" }}
         >
           <div className="text-black text-[37px] leading-[1.2] font-light mb-[25px]">
-            {" "}
-            Sadece İhtiyaç Duyduğunuz Özelliklerle Muhattap Olun{" "}
+            Sadece İhtiyaç Duyduğunuz Özelliklerle Muhattap Olun
           </div>
           <div className="text-gray-800 text-[18px] font-light leading-normal mb-[50px]">
-            {" "}
             Prodobit nöral bir mimari üstüne kurulmuştur. Ürün Detayları
             Özelleştirme özelliği ile ürünlerinize istediğiniz özellikleri
             ekleyin. Giysi için 'boyut', 'renk', teknoloji için 'hız', 'pil
-            gücü'... Her ürün, sizin kontrolünüzde!{" "}
+            gücü'... Her ürün, sizin kontrolünüzde!
           </div>
           <div className="text-blue-500 text-[37px] font-normal mb-[15px]">
-            {" "}
-            Şablon Seç{" "}
+            Şablon Seç
           </div>
 
           <div className="mb-[25px]">
