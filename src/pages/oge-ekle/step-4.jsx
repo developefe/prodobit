@@ -5,16 +5,14 @@ import { FormControl, MenuItem, Select } from "@mui/material";
 
 export default function Step4() {
   // For Width Select
-  var hundred = 100;
-  const [size, setSize] = useState(hundred);
+  const [size, setSize] = useState(1);
 
   const selectHandleChange = (event) => {
     setSize(event.target.value);
   };
 
   // For Height Select
-  var ten = 10;
-  const [height, setHeight] = useState(ten);
+  const [height, setHeight] = useState(1);
 
   const secSelectHandleChange = (event) => {
     setHeight(event.target.value);
@@ -22,16 +20,27 @@ export default function Step4() {
 
   // Add Variable
   const [isVisible, setIsVisible] = useState(false);
+  const [isVisibleClass, setIsVisibleClass] = useState(false);
 
   const toggleVisibility = () => {
-    setIsVisible(!isVisible);
+    if (isVisible) {
+      setIsVisibleClass(!isVisibleClass);
+      setTimeout(() => {
+        setIsVisible(!isVisible);
+      }, 500);
+    }else {
+      setIsVisible(true);
+      setTimeout(() => {
+        setIsVisibleClass(true);
+      });
+    }
   };
 
   return (
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
         <span className="block text-[54px] font-medium text-green-600 text-center">
           Öğe Özellikleri
         </span>
@@ -39,7 +48,7 @@ export default function Step4() {
         <div className="relative max-w-[700px] mx-auto mt-[55px]">
           <div
             className={`bg-white flex flex-col rounded-[40px] py-[50px] px-[75px] max-w-[700px] mx-auto mt-[55px] relative z-[2] ease-out duration-500 ${
-              isVisible ? "translate-x-[-12vw]" : ""
+              isVisibleClass ? "translate-x-[-12vw]" : ""
             }`}
             style={{ boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)" }}
           >
@@ -124,7 +133,7 @@ export default function Step4() {
                           </svg>
                         )}
                       >
-                        <MenuItem value={hundred}>
+                        <MenuItem value={1}>
                           100 <span>cm</span>
                         </MenuItem>
                         <MenuItem value={2}>
@@ -181,7 +190,7 @@ export default function Step4() {
                           </svg>
                         )}
                       >
-                        <MenuItem value={ten}>
+                        <MenuItem value={1}>
                           10 <span>cm</span>
                         </MenuItem>
                         <MenuItem value={2}>
@@ -510,103 +519,107 @@ export default function Step4() {
               </div>
             </div>
           </div>
-          <div
-            className={`bg-white flex flex-col rounded-[40px] py-[50px] px-[75px] max-w-[475px] max-h-[100%] mx-auto z-[1] ease-out duration-500 absolute w-[100%] h-[100%] top-0 left-0 before:content-[''] before:absolute before:left-0 before:bottom-[50px] before:right-0 before:h-[200px] before:bg-gradient-to-t before:from-white before:to-white/0 before:pointer-events-none  ${
-              isVisible ? "translate-x-[26vw]" : ""
-            }`}
-            style={{ boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)" }}
-          >
-            <div className="text-black text-[37px] leading-[1.2] font-light mb-[40px]">
-              Varyasyon Değişkenleri
-            </div>
-            <div className="text-gray-900 text-[18px] leading-[1.3] font-light mb-[40px]">
-              Varyasyon değişkeni özelliği ürünlerinizin sabit olandeğerlerini
-              tutar yalnızca değiştirilecek bölgerini düzenlemenize yardımcı
-              olur. Böylece hızlı ve daha sadece bir ekleme paneli oluşturmuş
-              olursunuz kendinize.
-            </div>
-            <div
-              className="flex flex-col gap-[30px] overflow-y-auto max-h-[-webkit-fill-available] step-4-webkit pb-[200px]"
+          {
+            (isVisible) && (
+              <div
+              className={`bg-white flex flex-col rounded-[40px] py-[50px] px-[75px] max-w-[475px] max-h-[100%] mx-auto z-[1] ease-out duration-500 absolute w-[100%] h-[100%] top-0 left-0 before:content-[''] before:absolute before:left-0 before:bottom-[50px] before:right-0 before:h-[200px] before:bg-gradient-to-t before:from-white before:to-white/0 before:pointer-events-none  ${
+                isVisibleClass ? "translate-x-[26vw]" : ""
+              }`}
+              style={{ boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)" }}
             >
-              <div className="flex justify-between items-center bg-gray-500 rounded-[30px] px-[30px] py-[30px]">
-                <div className="text-black text-[26px] leading-[1.2] font-light">
-                  Boyut
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={35}
-                  height={21}
-                  fill="none"
-                  className="cursor-pointer"
-                >
-                  <path
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M13.125 10.5h8.75"
-                  />
-                  <rect
-                    width={34}
-                    height={19}
-                    x={0.5}
-                    y={1}
-                    stroke="#000"
-                    rx={9.5}
-                  />
-                </svg>
+              <div className="text-black text-[37px] leading-[1.2] font-light mb-[40px]">
+                Varyasyon Değişkenleri
               </div>
-              <div className="flex justify-between items-center bg-gray-500 rounded-[30px] px-[30px] py-[30px]">
-                <div className="text-black text-[26px] leading-[1.2] font-light">
-                  Boyut
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={35}
-                  height={21}
-                  fill="none"
-                  className="cursor-pointer"
-                >
-                  <path
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M13.125 10.5h8.75"
-                  />
-                  <rect
-                    width={34}
-                    height={19}
-                    x={0.5}
-                    y={1}
-                    stroke="#000"
-                    rx={9.5}
-                  />
-                </svg>
+              <div className="text-gray-900 text-[18px] leading-[1.3] font-light mb-[40px]">
+                Varyasyon değişkeni özelliği ürünlerinizin sabit olandeğerlerini
+                tutar yalnızca değiştirilecek bölgerini düzenlemenize yardımcı
+                olur. Böylece hızlı ve daha sadece bir ekleme paneli oluşturmuş
+                olursunuz kendinize.
               </div>
-              <div className="flex justify-between items-center border-[1px] border-gray-700 rounded-[30px] px-[30px] py-[30px] cursor-pointer">
-                <div className="text-black text-[26px] leading-[1.2] font-light">
-                  Ekle
-                </div>
-                <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={15}
-                      height={16}
-                      fill="none"
-                    >
-                      <path
-                        stroke="#fff"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M7.5 3.625v8.75M3.125 8h8.75"
-                      />
-                    </svg>
+              <div
+                className="flex flex-col gap-[30px] overflow-y-auto max-h-[-webkit-fill-available] step-4-webkit pb-[200px]"
+              >
+                <div className="flex justify-between items-center bg-gray-500 rounded-[30px] px-[30px] py-[30px]">
+                  <div className="text-black text-[26px] leading-[1.2] font-light">
+                    Boyut
                   </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={35}
+                    height={21}
+                    fill="none"
+                    className="cursor-pointer"
+                  >
+                    <path
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M13.125 10.5h8.75"
+                    />
+                    <rect
+                      width={34}
+                      height={19}
+                      x={0.5}
+                      y={1}
+                      stroke="#000"
+                      rx={9.5}
+                    />
+                  </svg>
+                </div>
+                <div className="flex justify-between items-center bg-gray-500 rounded-[30px] px-[30px] py-[30px]">
+                  <div className="text-black text-[26px] leading-[1.2] font-light">
+                    Boyut
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={35}
+                    height={21}
+                    fill="none"
+                    className="cursor-pointer"
+                  >
+                    <path
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M13.125 10.5h8.75"
+                    />
+                    <rect
+                      width={34}
+                      height={19}
+                      x={0.5}
+                      y={1}
+                      stroke="#000"
+                      rx={9.5}
+                    />
+                  </svg>
+                </div>
+                <div className="flex justify-between items-center border-[1px] border-gray-700 rounded-[30px] px-[30px] py-[30px] cursor-pointer">
+                  <div className="text-black text-[26px] leading-[1.2] font-light">
+                    Ekle
+                  </div>
+                  <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={15}
+                        height={16}
+                        fill="none"
+                      >
+                        <path
+                          stroke="#fff"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M7.5 3.625v8.75M3.125 8h8.75"
+                        />
+                      </svg>
+                    </div>
+                </div>
               </div>
             </div>
-          </div>
+            )
+          }
         </div>
       </div>
 

@@ -692,7 +692,7 @@ export default function Step3() {
               <input
                 className="rounded-full h-[58px] px-[30px] text-black text-[15px] font-normal w-[100%] bg-gray-400 focus:outline-none"
                 type="text"
-                value="Boy"
+                defaultValue="Boy"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
