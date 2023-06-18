@@ -62,7 +62,7 @@ export default function Step4() {
                 </div>
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
                   <div
-                    className="flex gap-[5px] cursor-pointer items-center"
+                    className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +211,7 @@ export default function Step4() {
                   Renk
                 </div>
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
-                  <div className="flex gap-[5px] cursor-pointer items-center">
+                  <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={18}
@@ -306,7 +306,7 @@ export default function Step4() {
                   Beden
                 </div>
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
-                  <div className="flex gap-[5px] cursor-pointer items-center">
+                  <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={18}
@@ -452,7 +452,7 @@ export default function Step4() {
                   Model
                 </div>
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
-                  <div className="flex gap-[5px] cursor-pointer items-center">
+                  <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={18}

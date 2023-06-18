@@ -142,7 +142,7 @@ export default function Step2() {
             </div>
             <div className="text-black font-medium text-[37px]">BK23SR25</div>
           </div>
-          <div className="flex justify-between items-center py-[30px] px-[40px] mx-[-30px] bg-gray-200 rounded-[20px]">
+          <div className="flex justify-between items-center py-[30px] px-[40px] mx-[-30px] bg-gray-200 rounded-[20px] cursor-pointer">
             <div className="flex gap-[20px]">
               <img src={excel.src} alt="" />
               <div className="flex flex-col">
@@ -150,7 +150,7 @@ export default function Step2() {
                   Excel x Csv
                 </div>
                 <div className="text-black font-normal text-[15px]">
-                  Excel x Csv
+                  Dosya İle Aktar
                 </div>
               </div>
             </div>

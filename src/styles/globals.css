@@ -205,6 +205,20 @@ tbody .MuiTableCell-root {
 .step-3-tabs .MuiTabs-indicator { height: 1px; background: #2980B9; }
 .step-3-tab-panels .MuiBox-root{ padding: 0; }
 
+/* Step-5 --- */
+
+.MuiTabs-root.step-5-tabs {}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root {margin: 0;padding: 0;}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root > span {display: none;}
+.MuiTabs-root.step-5-tabs .MuiTabs-scroller {}
+.MuiTabs-root.step-5-tabs .MuiTabs-scroller > span { display: none; }
+.MuiTabs-root.step-5-tabs .MuiTabs-scroller .MuiTabs-flexContainer { gap: 8px; flex-wrap: wrap; }
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected {}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div { background: #EAF2F8; }
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div .icon { background: #BDD8E9 !important; }
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div .icon svg { opacity: 1 !important; }
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div .text-blue-300 { color: #1D5B83 !important; }
+
 /* Custom */
 
 .step-4-webkit::-webkit-scrollbar {width: 0; height: 0;}
