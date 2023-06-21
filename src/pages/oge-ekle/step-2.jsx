@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-import AddProductSteps from "@/components/add-product-steps";
 import { FormControl, MenuItem, Select } from "@mui/material";
 
 import brandImgHolder from "@/assets/img/brand-image-holder.png";
 import excel from "@/assets/img/excel.svg";
+
+import AddProductSteps from "@/components/add-product-steps";
 
 export default function Step2() {
   // For Brand Select
@@ -18,7 +19,7 @@ export default function Step2() {
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[9vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10">
         <span className="block text-[54px] font-medium text-green-600 text-center">
           Öğe Kimliği
         </span>
@@ -28,11 +29,13 @@ export default function Step2() {
           style={{ boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)" }}
         >
           <div className="flex items-center">
-            <img className="mr-[25px]" src={brandImgHolder.src} alt="" />
+            <img className="mr-[25px]" src={brandImgHolder.src} alt="Nike" />
+
             <div className="flex flex-col ">
               <div className="text-gray-900 font-medium leading-normal text-sm mb-[20px]">
                 Öğeniz İçin Marka Belirleyin
               </div>
+
               <div className="flex flex-wrap gap-[10px]">
                 <div className="flex items-center justify-center border-[1px] border-green-600 rounded-full">
                   <FormControl fullWidth className="step-2-select">
@@ -65,7 +68,8 @@ export default function Step2() {
                     </Select>
                   </FormControl>
                 </div>
-                <div className="flex items-center justify-center py-[10px] px-[30px] border-[1px] border-green-600 rounded-full">
+
+                <div className="flex items-center justify-center py-[10px] px-[30px] border-[1px] border-green-600 rounded-full cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
@@ -84,21 +88,25 @@ export default function Step2() {
               </div>
             </div>
           </div>
+
           <div className="flex flex-col py-[35px] my-[40px] border-y-[1px] border-gray-600">
             <div className="text-gray-900 font-medium leading-normal text-sm mb-[20px]">
               Öğenizin Ana Adını Belirleyin
             </div>
+
             <div className="text-black font-normal text-[64px] leading-[1.3]">
               Sportswear Tech Fleece
             </div>
           </div>
+
           <div className="flex flex-col pb-[40px] mb-[30px] border-b-[1px] border-gray-600">
             <div className="flex justify-between mb-[25px]">
               <div className="text-gray-900 font-medium leading-normal text-sm">
                 Öğe Kodu
               </div>
+
               <div className="flex gap-[20px]">
-                <div className="flex items-center gap-[8px]">
+                <div className="cursor-pointer flex items-center gap-[8px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={18}
@@ -114,7 +122,8 @@ export default function Step2() {
                   </svg>
                   Otomatik Oluştur
                 </div>
-                <div className="flex items-center gap-[8px]">
+
+                <div className="cursor-pointer flex items-center gap-[8px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={18}
@@ -140,57 +149,87 @@ export default function Step2() {
                 </div>
               </div>
             </div>
+
             <div className="text-black font-medium text-[37px]">BK23SR25</div>
           </div>
-          <div className="flex justify-between items-center py-[30px] px-[40px] mx-[-30px] bg-gray-200 rounded-[20px] cursor-pointer">
+
+          <div className="flex justify-between items-center py-[30px] px-[40px] mx-[-30px] bg-gray-200 rounded-[20px]">
             <div className="flex gap-[20px]">
-              <img src={excel.src} alt="" />
+              <img src={excel.src} alt="Excel" />
+
               <div className="flex flex-col">
-                <div className="text-black font-bold text-[15px]">
-                  Excel x Csv
+                <div className="text-black font-bold text-[15px] flex items-center gap-[5px]">
+                  Excel
+                  <svg
+                    width="14"
+                    height="6"
+                    viewBox="0 0 14 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <line
+                      y1="-0.5"
+                      x2="12.7279"
+                      y2="-0.5"
+                      transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 13.104 5.14453)"
+                      stroke="black"
+                    />
+                    <line
+                      x1="0.680405"
+                      y1="4.66157"
+                      x2="12.9746"
+                      y2="1.36734"
+                      stroke="black"
+                    />
+                  </svg>
+                  Csv
                 </div>
+
                 <div className="text-black font-normal text-[15px]">
                   Dosya İle Aktar
                 </div>
               </div>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={50}
-              height={50}
-              fill="none"
-            >
-              <path
-                stroke="#292D32"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="m29 29-4-4-4 4M25 25v9"
-              />
-              <path
-                stroke="#292D32"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M33.39 31.39A5 5 0 0 0 31 22h-1.26A8 8 0 1 0 16 29.3"
-              />
-              <path
-                stroke="#292D32"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="m29 29-4-4-4 4"
-              />
-              <rect
-                width={49}
-                height={49}
-                x={0.5}
-                y={0.5}
-                stroke="#000"
-                strokeOpacity={0.4}
-                rx={24.5}
-              />
-            </svg>
+
+            <div className="cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={50}
+                height={50}
+                fill="none"
+              >
+                <path
+                  stroke="#292D32"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="m29 29-4-4-4 4M25 25v9"
+                />
+                <path
+                  stroke="#292D32"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M33.39 31.39A5 5 0 0 0 31 22h-1.26A8 8 0 1 0 16 29.3"
+                />
+                <path
+                  stroke="#292D32"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="m29 29-4-4-4 4"
+                />
+                <rect
+                  width={49}
+                  height={49}
+                  x={0.5}
+                  y={0.5}
+                  stroke="#000"
+                  strokeOpacity={0.4}
+                  rx={24.5}
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

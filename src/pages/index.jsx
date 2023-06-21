@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Box from "@mui/material/Box";
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Tabs, Tab, Box, FormControl, MenuItem, Select } from "@mui/material";
 
 import pageBanner from "@/assets/img/page-banner.png";
 
 import TableList from "@/components/table-list";
 import Header from "@/layouts/header";
-
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -309,9 +305,10 @@ export default function Home() {
                 <span className="block text-[12px] font-light text-gray-1100/50">
                   Gösterim
                 </span>
+
                 <FormControl fullWidth>
                   <Select
-                    id="demo-simple-select"
+                    className="text-[15px] font-medium text-gray-1100"
                     defaultValue={age}
                     value={age}
                     onChange={selectHandleChange}
@@ -321,7 +318,7 @@ export default function Home() {
                         width={12}
                         height={12}
                         fill="none"
-                        className="opacity-50"
+                        className="ml-[-15px]"
                       >
                         <path
                           stroke="#242529"

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function AddProductSteps() {
   return (
-    <div className="flex items-center  border-b border-gray-700 fixed z-10 top-0 right-0 left-[460px] backdrop-blur-xl">
+    <div className="flex items-center  border-b border-gray-700 fixed top-0 right-0 left-[460px] backdrop-blur-xl z-[10]">
     <div className="flex-1 flex items-center justify-between py-[30px] px-[40px]">
       <div className="mr-1">
         <span className="block text-[12px] font-bold text-green-600">

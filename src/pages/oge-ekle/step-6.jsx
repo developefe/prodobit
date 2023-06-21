@@ -31,7 +31,7 @@ export default function Step6() {
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[150px] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
         <span className="block text-[54px] font-medium text-green-600 text-center">
           Ürün Özeti
         </span>

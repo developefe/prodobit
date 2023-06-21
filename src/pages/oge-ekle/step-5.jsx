@@ -37,7 +37,7 @@ export default function Step5() {
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[150px] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
         <span className="block text-[54px] font-medium text-green-600 text-center">
           Ürün Özeti
         </span>
@@ -1434,26 +1434,25 @@ export default function Step5() {
             className="bg-white/80 backdrop-blur-[5px] p-[15px] rounded-full flex items-center gap-[5px] shadow-2xl shadow-red-10/40"
             style={{ boxShadow: "0px 24px 54px -13px rgba(177, 109, 92, 0.3)" }}
           >
-            <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-red-500 border border-red-500 rounded-full py-[16px] px-[10px] text-center gap-[15px]">
+            <div className="cursor-pointer flex items-center justify-center text-[22px] font-light text-blue-400 border border-blue-400 rounded-full py-[16px] px-[24px] text-center gap-[15px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
+                width={10}
+                height={10}
                 fill="none"
               >
                 <path
-                  stroke="#F34A53"
+                  stroke="#5499C7"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M18 6 6 18M6 6l12 12"
+                  strokeWidth={1.5}
+                  d="M1 5h8M5 1v8"
                 />
               </svg>
-              <span>İptal</span>
+              <span>Varyasyon Ürünü Ekle</span>
             </div>
 
             <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[10px]">
-              <span>Sonraki</span>
+              <span>Yayınla</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}

@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
+import { Box, Tab, Tabs } from "@mui/material";
+
 import AddProductSteps from "@/components/add-product-steps";
-import {
-  Box,
-  Tab,
-  Tabs,
-} from "@mui/material";
 
 export default function Step3() {
   // Tab value
-  const [tabValue, setTabValue] = React.useState(0);
+  const [tabValue, setTabValue] = useState(0);
 
   const tabsHandle = (event, newValue) => {
     setTabValue(newValue);
@@ -26,12 +23,51 @@ export default function Step3() {
         aria-labelledby={`simple-tab-${index}`}
         {...other}
       >
-        {tabValue === index && (
-          <Box sx={{ p: 3 }}>
-            <div>{children}</div>
-          </Box>
-        )}
+        {tabValue === index && <Box sx={{ p: 3 }}>{children}</Box>}
       </div>
+    );
+  }
+
+  // Edit Icon
+  let editIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={14}
+      height={14}
+      fill="none"
+      className="mr-[3px]"
+    >
+      <path
+        stroke="#2980B9"
+        d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
+      />
+      <path
+        stroke="#2980B9"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M11.083 11.667H2.917"
+      />
+    </svg>
+  );
+
+  // Remove Icon
+  function removeIcon(color) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={14}
+        height={14}
+        fill="none"
+      >
+        <path
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="m10.5 3.5-7 7M3.5 3.5l7 7"
+        />
+      </svg>
     );
   }
 
@@ -39,7 +75,7 @@ export default function Step3() {
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[150px] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10">
         <span className="block text-[54px] font-medium text-green-600 text-center">
           Öğe Özellikleri
         </span>
@@ -51,14 +87,17 @@ export default function Step3() {
           <div className="text-black text-[37px] leading-[1.2] font-light mb-[25px]">
             Sadece İhtiyaç Duyduğunuz Özelliklerle Muhattap Olun
           </div>
+
           <div className="text-gray-800 text-[18px] font-light leading-normal mb-[50px]">
+            {" "}
             Prodobit nöral bir mimari üstüne kurulmuştur. Ürün Detayları
             Özelleştirme özelliği ile ürünlerinize istediğiniz özellikleri
             ekleyin. Giysi için 'boyut', 'renk', teknoloji için 'hız', 'pil
-            gücü'... Her ürün, sizin kontrolünüzde!
+            gücü'... Her ürün, sizin kontrolünüzde!{" "}
           </div>
+
           <div className="text-blue-500 text-[37px] font-normal mb-[15px]">
-            Şablon Seç
+            Şablon Seç{" "}
           </div>
 
           <div className="mb-[25px]">
@@ -72,6 +111,7 @@ export default function Step3() {
               <Tab label="B2B" />
             </Tabs>
           </div>
+
           <div className="step-3-tab-panels pb-[40px] mb-[30px] border-b-[1px] border-gray-600">
             <TabPanel value={1} index={0}>
               <div className="flex items-center gap-[5px] flex-wrap">
@@ -79,485 +119,138 @@ export default function Step3() {
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Kumaş
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Teknoloji
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Nike
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Hammadde
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
               </div>
             </TabPanel>
+
             <TabPanel value={2} index={1}>
               <div className="flex items-center gap-[5px] flex-wrap">
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Teknoloji
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Kumaş
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Hammadde
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Nike
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
               </div>
             </TabPanel>
+
             <TabPanel value={3} index={2}>
               <div className="flex items-center gap-[5px] flex-wrap">
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Kumaş
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Nike
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Hammadde
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
+
                 <div className="flex items-center rounded-full px-[15px] py-[10px] bg-blue-50">
                   <div className="mr-[10px] text-blue-700 text-[15px]">
                     Teknoloji
                   </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
               </div>
             </TabPanel>
           </div>
+
           <div className="flex justify-between mb-[35px]">
             <div className="text-gray-900 text-[15px]">
               Özellik Alanları Belirleyin
             </div>
+
             <div className="flex gap-[5px] items-center text-black font-semibold text-[15px] cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -577,116 +270,45 @@ export default function Step3() {
               Şablon Olarak Kaydet
             </div>
           </div>
+
           <div className="flex items-center justify-center flex-wrap gap-[5px] mb-[80px]">
             <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
               <div className="text-black text-[15px] font-normal">2D Boyut</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={14}
-                height={14}
-                fill="none"
-                className="cursor-pointer"
-              >
-                <path
-                  stroke="#0C3F34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                />
-              </svg>
+
+              <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
             </div>
+
             <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
               <div className="text-black text-[15px] font-normal">Renk</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={14}
-                height={14}
-                fill="none"
-                className="cursor-pointer"
-              >
-                <path
-                  stroke="#0C3F34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                />
-              </svg>
+
+              <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
             </div>
+
             <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
               <div className="text-black text-[15px] font-normal">Beden</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={14}
-                height={14}
-                fill="none"
-                className="cursor-pointer"
-              >
-                <path
-                  stroke="#0C3F34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                />
-              </svg>
+
+              <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
             </div>
+
             <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
               <div className="text-black text-[15px] font-normal">Kalite</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={14}
-                height={14}
-                fill="none"
-                className="cursor-pointer"
-              >
-                <path
-                  stroke="#0C3F34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                />
-              </svg>
+
+              <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
             </div>
+
             <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
               <div className="text-black text-[15px] font-normal">2D Boyut</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={14}
-                height={14}
-                fill="none"
-                className="cursor-pointer"
-              >
-                <path
-                  stroke="#0C3F34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                />
-              </svg>
+
+              <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
             </div>
+
             <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
               <div className="text-black text-[15px] font-normal">Materyal</div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={14}
-                height={14}
-                fill="none"
-                className="cursor-pointer"
-              >
-                <path
-                  stroke="#0C3F34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                />
-              </svg>
+
+              <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
             </div>
           </div>
+
           <div className="flex flex-col px-[40px] py-[30px] border-[1px] border-gray-600 rounded-[20px] mx-[-30px]">
             <div className="flex w-[100%] relative mt-[-60px]">
               <input
@@ -707,9 +329,11 @@ export default function Step3() {
                 />
               </svg>
             </div>
+
             <div className="text-gray-900 text-[15px] mt-[20px]">
               Bunu Mu Demek İstediniz?
             </div>
+
             <div className="flex flex-wrap gap-[5px] py-[20px]">
               <div className="flex items-center w-[100%] rounded-[10px] border-[1px] border-green-100 px-[25px] py-[10px]">
                 <svg
@@ -728,10 +352,12 @@ export default function Step3() {
                     d="m27.5 14.5-9.345 11-5.655-6.656"
                   />
                 </svg>
+
                 <div className="flex flex-col ml-[25px]">
                   <div className="text-blue-700 text-[12px] font-medium mb-[5px]">
                     3D Boyut
                   </div>
+
                   <div className="flex items-center gap-[5px] flex-wrap">
                     <div className="text-black text-[12px] font-normal rounded-full py-[6px] px-[15px] bg-gray-400">
                       En
@@ -744,43 +370,14 @@ export default function Step3() {
                     </div>
                   </div>
                 </div>
+
                 <div className="flex gap-[5px] ml-auto">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
               </div>
+
               <div className="flex items-center w-[100%] rounded-[10px] border-[1px] border-green-100 px-[25px] py-[10px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -798,10 +395,12 @@ export default function Step3() {
                     d="m27.5 14.5-9.345 11-5.655-6.656"
                   />
                 </svg>
+
                 <div className="flex flex-col ml-[25px]">
                   <div className="text-blue-700 text-[12px] font-medium mb-[5px]">
                     Kumaş
                   </div>
+
                   <div className="flex items-center gap-[5px] flex-wrap">
                     <div className="text-black text-[12px] font-normal rounded-full py-[6px] px-[15px] bg-gray-400">
                       Kullanılan Kumaş
@@ -814,121 +413,44 @@ export default function Step3() {
                     </div>
                   </div>
                 </div>
+
                 <div className="flex gap-[5px] ml-auto">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      d="M9.625 5.33c-1.06.353-2.475-1.061-2.121-2.122m.436-.435L5.655 5.057a7.75 7.75 0 0 0-2.039 3.601l-.11.442a.188.188 0 0 0 .228.227l.441-.11a7.75 7.75 0 0 0 3.6-2.039l2.286-2.284A1.5 1.5 0 1 0 7.94 2.773Z"
-                    />
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M11.083 11.667H2.917"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={14}
-                    height={14}
-                    fill="none"
-                    className="mr-[3px] cursor-pointer"
-                  >
-                    <path
-                      stroke="#2980B9"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                    />
-                  </svg>
+                  <div className="cursor-pointer">{editIcon}</div>
+
+                  <div className="cursor-pointer">{removeIcon("#2980B9")}</div>
                 </div>
               </div>
             </div>
-            <div className="text-gray-900 text-[15px] mb-[20px]">
+
+            <div className="text-gray-900 text-[15px] mb-[15px]">
               En Son Kullanılanlar
             </div>
+
             <div className="flex flex-wrap items-center gap-[5px]">
               <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
                 <div className="text-black text-[15px] font-normal">
                   2D Boyut
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={14}
-                  height={14}
-                  fill="none"
-                  className="cursor-pointer"
-                >
-                  <path
-                    stroke="#0C3F34"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                  />
-                </svg>
+
+                <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
               </div>
+
               <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
                 <div className="text-black text-[15px] font-normal">Renk</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={14}
-                  height={14}
-                  fill="none"
-                  className="cursor-pointer"
-                >
-                  <path
-                    stroke="#0C3F34"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                  />
-                </svg>
+
+                <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
               </div>
+
               <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
                 <div className="text-black text-[15px] font-normal">Beden</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={14}
-                  height={14}
-                  fill="none"
-                  className="cursor-pointer"
-                >
-                  <path
-                    stroke="#0C3F34"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                  />
-                </svg>
+
+                <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
               </div>
+
               <div className="flex items-center justify-center gap-[10px] rounded-full border-[1px] border-green-800 py-[8px] px-[18px]">
                 <div className="text-black text-[15px] font-normal">Kalite</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={14}
-                  height={14}
-                  fill="none"
-                  className="cursor-pointer"
-                >
-                  <path
-                    stroke="#0C3F34"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="m10.5 3.5-7 7M3.5 3.5l7 7"
-                  />
-                </svg>
+
+                <div className="cursor-pointer">{removeIcon("#0C3F34")}</div>
               </div>
             </div>
           </div>

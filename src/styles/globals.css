@@ -9,9 +9,17 @@ body {
   background: linear-gradient(117.38deg, #e6edeb 2.39%, #feedee 99.58%);
 }
 
-::-webkit-scrollbar { width: 3px; height: 0px;}
-::-webkit-scrollbar-track { background-color: #2AE19E; }
-::-webkit-scrollbar-thumb { background-color: #1C957B; border-radius: 15px; }
+::-webkit-scrollbar {
+  width: 3px;
+  height: 0px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2ae19e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1c957b;
+  border-radius: 15px;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -172,53 +180,132 @@ tbody .MuiTableCell-root {
 }
 
 /* Mui Select */
+.MuiFormControl-root {
+  width: max-content;
+  margin: 0 10px 0 2px;
+}
+.MuiFormControl-root .MuiOutlinedInput-notchedOutline {
+  border: 0;
+  padding: 0;
+}
+.MuiFormControl-root .MuiSelect-select {
+  padding: 0;
+  padding-right: 0 !important;
+  width: 35px;
+}
 
-.MuiFormControl-root {width: max-content; margin: 0 10px 0 2px;}
-.MuiFormControl-root .MuiOutlinedInput-notchedOutline { border: 0; padding: 0; }
-.MuiFormControl-root .MuiSelect-select { padding: 0; padding-right: 0 !important; width: 35px; }
+/* Add Product Step 2 */
+.MuiFormControl-root.step-2-select .MuiSelect-select {
+  width: 55px;
+  text-align: left;
+  padding: 10px 45px 10px 35px !important;
+}
+.MuiFormControl-root.step-2-select {
+  margin: 0;
+}
+.MuiFormControl-root.step-2-select .MuiInputBase-root svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
 
-/* Step-2 --- */
+/* Add Product Step 3 */
+.step-3-tabs .MuiTab-root:first-child {
+  margin-left: 0;
+}
 
-.MuiFormControl-root.step-2-select .MuiSelect-select { width: 55px; text-align: left; padding: 10px 45px 10px 35px!important; }
-.MuiFormControl-root.step-2-select { margin: 0; }
-.MuiFormControl-root.step-2-select .MuiInputBase-root svg { right: 20px;}
-.MuiFormControl-root.step-2-select .MuiInputBase-root svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;}
+.MuiTabs-root.step-3-tabs {
+  min-height: 35px;
+}
 
-/* Step-4 --- */
+.step-3-tabs .MuiTab-root {
+  color: #000;
+  min-height: 35px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 15px;
+}
 
-.MuiFormControl-root.step-4-select { display: flex; align-items: center; justify-content: center; margin: 0; }
-.MuiFormControl-root.step-4-select .MuiSelect-select { width: max-content; min-width: 60px; text-align: left; padding: 7px 40px 7px 20px !important; font-size: 22px; font-weight: 800; line-height: 1; display: flex; align-items: center; gap: 5px;}
-.MuiFormControl-root.step-4-select .MuiSelect-select span { font-weight: 600; }
-.MuiFormControl-root.step-4-select .MuiInputBase-root svg { right: 20px;}
-.MuiFormControl-root.step-4-select .MuiInputBase-root svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;}
-.MuiFormControl-root.step-4-select .MuiInputBase-root { height: 100%; padding: 0; }
+.step-3-tabs .MuiTabs-indicator {
+  height: 1px;
+  background: #2980b9;
+}
 
-/* Mui Select */
+.step-3-tab-panels .MuiBox-root {
+  padding: 0;
+}
 
-/* Mui Tabs */
+/* Add Product Step 4 */
+.MuiFormControl-root.step-4-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.MuiFormControl-root.step-4-select .MuiSelect-select {
+  width: max-content;
+  min-width: 60px;
+  text-align: left;
+  padding: 7px 40px 7px 20px !important;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.MuiFormControl-root.step-4-select .MuiSelect-select span {
+  font-weight: 600;
+}
+.MuiFormControl-root.step-4-select .MuiInputBase-root svg {
+  right: 20px;
+}
+.MuiFormControl-root.step-4-select .MuiInputBase-root svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.MuiFormControl-root.step-4-select .MuiInputBase-root {
+  height: 100%;
+  padding: 0;
+}
 
-/* Step-3 --- */
+.step-4-webkit::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
-.step-3-tabs .MuiTab-root:first-child { margin-left: 0; }
-.MuiTabs-root.step-3-tabs {min-height: 35px;}
-.step-3-tabs .MuiTab-root { color: #000; min-height: 35px; padding: 0; font-weight: 500; font-size: 15px; }
-.step-3-tabs .MuiTabs-indicator { height: 1px; background: #2980B9; }
-.step-3-tab-panels .MuiBox-root{ padding: 0; }
-
-/* Step-5 --- */
-
-.MuiTabs-root.step-5-tabs {}
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root {margin: 0;padding: 0;}
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root > span {display: none;}
-.MuiTabs-root.step-5-tabs .MuiTabs-scroller {}
-.MuiTabs-root.step-5-tabs .MuiTabs-scroller > span { display: none; }
-.MuiTabs-root.step-5-tabs .MuiTabs-scroller .MuiTabs-flexContainer { gap: 8px; flex-wrap: wrap; }
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected {}
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div { background: #EAF2F8; }
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div .icon { background: #BDD8E9 !important; }
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div .icon svg { opacity: 1 !important; }
-.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected >div .text-blue-300 { color: #1D5B83 !important; }
-
-/* Custom */
-
-.step-4-webkit::-webkit-scrollbar {width: 0; height: 0;}
+/* Add Product Step 5 */
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root {
+  margin: 0;
+  padding: 0;
+}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root > span {
+  display: none;
+}
+.MuiTabs-root.step-5-tabs .MuiTabs-scroller > span {
+  display: none;
+}
+.MuiTabs-root.step-5-tabs .MuiTabs-scroller .MuiTabs-flexContainer {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected > div {
+  background: #eaf2f8;
+}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected > div .icon {
+  background: #bdd8e9 !important;
+}
+.MuiTabs-root.step-5-tabs .MuiButtonBase-root.Mui-selected > div .icon svg {
+  opacity: 1 !important;
+}
+.MuiTabs-root.step-5-tabs
+  .MuiButtonBase-root.Mui-selected
+  > div
+  .text-blue-300 {
+  color: #1d5b83 !important;
+}

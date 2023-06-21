@@ -28,11 +28,11 @@ export default function Step4() {
       setTimeout(() => {
         setIsVisible(!isVisible);
       }, 500);
-    }else {
+    } else {
       setIsVisible(true);
       setTimeout(() => {
         setIsVisibleClass(true);
-      });
+      }, 10);
     }
   };
 
@@ -40,7 +40,7 @@ export default function Step4() {
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[7vw] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden pt-[150px] pb-[10vw] before:content-[''] before:fixed before:left-[460px] before:right-0 before:bottom-0 before:h-[200px] before:bg-gradient-to-t before:from-red-50 before:to-green-10/10 before:z-[3]">
         <span className="block text-[54px] font-medium text-green-600 text-center">
           Öğe Özellikleri
         </span>
@@ -61,9 +61,7 @@ export default function Step4() {
                   Boyut
                 </div>
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
-                  <div
-                    className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold"
-                  >
+                  <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={18}
@@ -87,6 +85,7 @@ export default function Step4() {
                     </svg>
                     Varyasyon Değişkeni Yap
                   </div>
+
                   <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,11 +104,13 @@ export default function Step4() {
                   </div>
                 </div>
               </div>
+
               <div className="flex items-center gap-[8px]">
                 <div className="flex border-[1px] border-gray-600 rounded-full">
                   <div className="px-[23px] text-black text-[22px] font-normal border-r-[1px] border-gray-600 flex items-center">
                     En
                   </div>
+
                   <div className="flex">
                     <FormControl fullWidth className="step-4-select">
                       <Select
@@ -146,6 +147,7 @@ export default function Step4() {
                     </FormControl>
                   </div>
                 </div>
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={13}
@@ -163,10 +165,12 @@ export default function Step4() {
                     transform="matrix(.83817 -.54542 .10967 .99397 1 9.309)"
                   />
                 </svg>
+
                 <div className="flex border-[1px] border-gray-600 rounded-full">
                   <div className="px-[23px] text-black text-[22px] font-normal border-r-[1px] border-gray-600 flex items-center">
                     Boy
                   </div>
+
                   <div className="flex">
                     <FormControl fullWidth className="step-4-select">
                       <Select
@@ -205,11 +209,13 @@ export default function Step4() {
                 </div>
               </div>
             </div>
+
             <div className="flex flex-col pb-[40px] mb-[30px] border-b-[1px] border-gray-600">
               <div className="flex justify-between items-center mb-[15px]">
                 <div className="text-green-600 text-[37px] font-normal ">
                   Renk
                 </div>
+
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
                   <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
@@ -235,6 +241,7 @@ export default function Step4() {
                     </svg>
                     Varyasyon Değişkeni Yap
                   </div>
+
                   <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -253,12 +260,14 @@ export default function Step4() {
                   </div>
                 </div>
               </div>
+
               <div className="flex items-center gap-[16px] flex-wrap">
                 <div className="flex items-center rounded-full border-[1px] border-gray-600 gap-[12px] py-[4px] px-[25px] relative">
                   <div className="bg-orange-10 border-[1px] border-white rounded-full w-[15px] h-[15px] shadow-[0_3px_11px_-1px_rgba(255,95,27,1)]"></div>
                   <div className="text-black text-[22px] font-bold">
                     Alev Kızılı
                   </div>
+
                   <div className="absolute right-0 top-[-8px] w-[20px] h-[20px] flex justify-center items-center bg-red-500 rounded-full cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -276,11 +285,13 @@ export default function Step4() {
                     </svg>
                   </div>
                 </div>
+
                 <div className="flex items-center rounded-full border-[1px] border-gray-600 gap-[12px] py-[4px] px-[25px] relative">
                   <div className="bg-blue-10 border-[1px] border-white rounded-full w-[15px] h-[15px] shadow-[0_3px_11px_-1px_rgba(0,106,203,1)]"></div>
                   <div className="text-black text-[22px] font-bold">
                     Gök Mavisi
                   </div>
+
                   <div className="absolute right-0 top-[-8px] w-[20px] h-[20px] flex justify-center items-center bg-red-500 rounded-full cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -300,11 +311,13 @@ export default function Step4() {
                 </div>
               </div>
             </div>
+
             <div className="flex flex-col pb-[40px] mb-[30px] border-b-[1px] border-gray-600">
               <div className="flex justify-between items-center mb-[15px]">
                 <div className="text-green-600 text-[37px] font-normal ">
                   Beden
                 </div>
+
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
                   <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
@@ -330,6 +343,7 @@ export default function Step4() {
                     </svg>
                     Varyasyon Değişkeni Yap
                   </div>
+
                   <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -348,6 +362,7 @@ export default function Step4() {
                   </div>
                 </div>
               </div>
+
               <div className="flex items-center gap-[16px] flex-wrap">
                 <div className="flex items-center justify-center rounded-full gap-[12px] py-[4px] px-[25px] relative w-[50px] h-[50px] bg-gray-500">
                   <div className="text-black text-[15px] font-medium">S</div>
@@ -368,6 +383,7 @@ export default function Step4() {
                     </svg>
                   </div>
                 </div>
+
                 <div className="flex items-center justify-center rounded-full gap-[12px] py-[4px] px-[25px] relative w-[50px] h-[50px] bg-gray-500">
                   <div className="text-black text-[15px] font-medium">M</div>
                   <div className="absolute right-0 top-[-8px] w-[20px] h-[20px] flex justify-center items-center bg-red-500 rounded-full cursor-pointer">
@@ -387,6 +403,7 @@ export default function Step4() {
                     </svg>
                   </div>
                 </div>
+
                 <div className="flex items-center justify-center rounded-full gap-[12px] py-[4px] px-[25px] relative w-[50px] h-[50px] bg-gray-500">
                   <div className="text-black text-[15px] font-medium">L</div>
                   <div className="absolute right-0 top-[-8px] w-[20px] h-[20px] flex justify-center items-center bg-red-500 rounded-full cursor-pointer">
@@ -406,6 +423,7 @@ export default function Step4() {
                     </svg>
                   </div>
                 </div>
+
                 <div className="flex items-center justify-center rounded-full gap-[12px] py-[4px] px-[25px] relative w-[50px] h-[50px] bg-gray-500">
                   <div className="text-black text-[15px] font-medium">XL</div>
                   <div className="absolute right-0 top-[-8px] w-[20px] h-[20px] flex justify-center items-center bg-red-500 rounded-full cursor-pointer">
@@ -425,6 +443,7 @@ export default function Step4() {
                     </svg>
                   </div>
                 </div>
+
                 <div className="flex items-center justify-center rounded-full gap-[12px] py-[4px] px-[25px] relative w-[50px] h-[50px] bg-gray-500">
                   <div className="text-black text-[15px] font-medium">2XL</div>
                   <div className="absolute right-0 top-[-8px] w-[20px] h-[20px] flex justify-center items-center bg-red-500 rounded-full cursor-pointer">
@@ -446,11 +465,13 @@ export default function Step4() {
                 </div>
               </div>
             </div>
+
             <div className="flex flex-col pb-[40px]">
               <div className="flex justify-between items-center mb-[15px]">
                 <div className="text-green-600 text-[37px] font-normal ">
                   Model
                 </div>
+
                 <div className="flex gap-[30px]" onClick={toggleVisibility}>
                   <div className="flex gap-[5px] cursor-pointer items-center text-black text-[15px] font-semibold">
                     <svg
@@ -476,6 +497,7 @@ export default function Step4() {
                     </svg>
                     Varyasyon Değişkeni Yap
                   </div>
+
                   <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -494,6 +516,7 @@ export default function Step4() {
                   </div>
                 </div>
               </div>
+
               <div className="flex items-center gap-[16px] flex-wrap">
                 <div className="flex items-center rounded-full border-[1px] border-gray-600 gap-[12px] py-[4px] px-[25px] relative">
                   <div className="text-black text-[22px] font-bold">
@@ -519,13 +542,15 @@ export default function Step4() {
               </div>
             </div>
           </div>
-          {
-            (isVisible) && (
-              <div
+
+          {isVisible && (
+            <div
               className={`bg-white flex flex-col rounded-[40px] py-[50px] px-[75px] max-w-[475px] max-h-[100%] mx-auto z-[1] ease-out duration-500 absolute w-[100%] h-[100%] top-0 left-0 before:content-[''] before:absolute before:left-0 before:bottom-[50px] before:right-0 before:h-[200px] before:bg-gradient-to-t before:from-white before:to-white/0 before:pointer-events-none  ${
                 isVisibleClass ? "translate-x-[26vw]" : ""
               }`}
-              style={{ boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)" }}
+              style={{
+                boxShadow: "0px 37px 44px -13px rgba(104, 48, 48, 0.1)",
+              }}
             >
               <div className="text-black text-[37px] leading-[1.2] font-light mb-[40px]">
                 Varyasyon Değişkenleri
@@ -536,9 +561,8 @@ export default function Step4() {
                 olur. Böylece hızlı ve daha sadece bir ekleme paneli oluşturmuş
                 olursunuz kendinize.
               </div>
-              <div
-                className="flex flex-col gap-[30px] overflow-y-auto max-h-[-webkit-fill-available] step-4-webkit pb-[200px]"
-              >
+
+              <div className="flex flex-col gap-[30px] overflow-y-auto max-h-[-webkit-fill-available] step-4-webkit pb-[200px]">
                 <div className="flex justify-between items-center bg-gray-500 rounded-[30px] px-[30px] py-[30px]">
                   <div className="text-black text-[26px] leading-[1.2] font-light">
                     Boyut
@@ -567,6 +591,7 @@ export default function Step4() {
                     />
                   </svg>
                 </div>
+
                 <div className="flex justify-between items-center bg-gray-500 rounded-[30px] px-[30px] py-[30px]">
                   <div className="text-black text-[26px] leading-[1.2] font-light">
                     Boyut
@@ -595,31 +620,31 @@ export default function Step4() {
                     />
                   </svg>
                 </div>
+
                 <div className="flex justify-between items-center border-[1px] border-gray-700 rounded-[30px] px-[30px] py-[30px] cursor-pointer">
                   <div className="text-black text-[26px] leading-[1.2] font-light">
                     Ekle
                   </div>
                   <div className="flex items-center justify-center py-[4px] px-[12px] bg-black rounded-full cursor-pointer">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={15}
-                        height={16}
-                        fill="none"
-                      >
-                        <path
-                          stroke="#fff"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M7.5 3.625v8.75M3.125 8h8.75"
-                        />
-                      </svg>
-                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={15}
+                      height={16}
+                      fill="none"
+                    >
+                      <path
+                        stroke="#fff"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M7.5 3.625v8.75M3.125 8h8.75"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-            )
-          }
+          )}
         </div>
       </div>
 

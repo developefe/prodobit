@@ -87,7 +87,7 @@ module.exports = {
       'green-700': '#146a57',
       'green-800': '#0f5244',
       'green-900': '#0c3f34',
-      
+
       'orange-10': '#FF5F1B',
       'orange-50': '#fff1ea',
       'orange-100': '#ffd5bd',

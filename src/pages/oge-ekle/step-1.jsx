@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 
-import AddProductSteps from "@/components/add-product-steps";
 import { FormControl, MenuItem, Select } from "@mui/material";
+
+import AddProductSteps from "@/components/add-product-steps";
 
 export default function Step1() {
   // For Hour Select
-  const [age, setAge] = useState(10);
+  const [hourValue, setHourValue] = useState(10);
 
   const selectHandleChange = (event) => {
-    setAge(event.target.value);
+    setHourValue(event.target.value);
   };
+
   return (
     <div className="flex flex-col">
       <AddProductSteps />
 
-      <div className="flex-1 overflow-y-auto overflow-x-hidden text-center pt-[7vw]">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden text-center pt-[11vw]">
         <span className="block text-[35px] font-light mb-[-10px]">
           Ürün Ekle
         </span>
@@ -34,34 +36,34 @@ export default function Step1() {
             <span className="text-[15px] text-gray-1100/70">Seçimimi</span>
 
             <FormControl fullWidth>
-                  <Select
-                    id="demo-simple-select"
-                    defaultValue={age}
-                    value={age}
-                    onChange={selectHandleChange}
-                    IconComponent={() => (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={12}
-                        height={12}
-                        fill="none"
-                        className="opacity-50"
-                      >
-                        <path
-                          stroke="#242529"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeMiterlimit={10}
-                          d="M9.96 4.475 6.7 7.735a.993.993 0 0 1-1.4 0l-3.26-3.26"
-                        />
-                      </svg>
-                    )}
+              <Select
+                className="text-[15px] font-medium text-gray-1100/70"
+                defaultValue={hourValue}
+                value={hourValue}
+                onChange={selectHandleChange}
+                IconComponent={() => (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={12}
+                    height={12}
+                    fill="none"
+                    className="opacity-50 ml-[-5px]"
                   >
-                    <MenuItem value={10}>10</MenuItem>
-                    <MenuItem value={20}>20</MenuItem>
-                    <MenuItem value={30}>30</MenuItem>
-                  </Select>
-                </FormControl>
+                    <path
+                      stroke="#242529"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeMiterlimit={10}
+                      d="M9.96 4.475 6.7 7.735a.993.993 0 0 1-1.4 0l-3.26-3.26"
+                    />
+                  </svg>
+                )}
+              >
+                <MenuItem value={10}>10</MenuItem>
+                <MenuItem value={20}>20</MenuItem>
+                <MenuItem value={30}>30</MenuItem>
+              </Select>
+            </FormControl>
 
             <span className="text-[15px] text-gray-1100/70">
               saat boyunca hatırla
