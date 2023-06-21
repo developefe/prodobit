@@ -122,6 +122,28 @@ module.exports = {
       'turquoise-800': '#08818c',
       'turquoise-900': '#06626b',
     },
+    screens: {
+      '2xl': [
+        {'max': '1680px'},
+        {'min': '1681px'},
+      ],
+      'xl':{
+        'max': '1440px',
+      },
+      'lg': {
+        'max': '1370px',
+      },
+      'md': {
+        'max': '1199px',
+      },
+      'sm':{
+        'max': '991px',
+      },
+      'xs':
+      {
+        'max': '767px', 
+      },
+    }
   },
   plugins: [
     plugin(function ({ addBase, theme }) {

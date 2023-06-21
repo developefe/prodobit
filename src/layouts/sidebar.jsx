@@ -6,7 +6,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import logo from "@/assets/img/logo.svg";
 import avatar from "@/assets/img/avatar.svg";
 
-export default function Sidebar() {
+export default function Sidebar({isSidebarVisible}) {
   const [expanded, setExpanded] = useState([]);
 
   const handleChange = (panelId) => (_, isExpanded) => {
@@ -20,18 +20,21 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sidebar sticky top-0 py-[50px] max-w-[460px] w-[100%] bg-gray-100/90 rounded-tr-[80px] rounded-br-[80px] h-[100vh] flex flex-col">
-      <Link href={"/"} className="mb-[70px] px-[80px]">
-        <img src={logo.src} alt="Prodobit" />
+    <div className={`sidebar sticky top-0 py-[50px] max-w-[460px] w-[100%] bg-gray-100/90 rounded-tr-[80px] rounded-br-[80px] h-[100vh] flex flex-col ${isSidebarVisible ? 'md:translate-x-[0%]' : 'md:translate-x-[-100%]'}`}>
+      <Link
+        href={"/"}
+        className="mb-[70px] px-[80px] xl:px-[60px] lg:mb-[35px] md:hidden"
+      >
+        <img className="lg:w-[150px]" src={logo.src} alt="Prodobit" />
       </Link>
 
       <div className="flex-1 overflow-hidden">
-        <div className="overflow-y-auto overflow-x-auto pr-[100px] max-h-[95%]">
-          <ul className="flex flex-col gap-[20px]">
+        <div className="overflow-y-auto overflow-x-auto pr-[100px] max-h-[95%] xs:pr-0">
+          <ul className="flex flex-col gap-[20px] lg:gap-[0px]">
             <li className="relative">
               <Link
                 href={"#"}
-                className="text-[20px] font-bold text-gray-800 ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px]"
+                className="text-[20px] font-bold text-gray-800 ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px] xl:ml-[30px] xs:ml-[0] xs:py-[15px]"
               >
                 <div className="flex items-center flex-1 gap-[15px]">
                   <svg
@@ -83,7 +86,7 @@ export default function Sidebar() {
                     expanded.includes("analizler")
                       ? "bg-green-100/30 text-green-700"
                       : "text-gray-800"
-                  } text-[20px] font-bold w-[100%] ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px]`}
+                  } text-[20px] font-bold w-[100%] ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px] xl:ml-[30px] xs:ml-[0] xs:py-[15px]`}
                 >
                   <div className="flex items-center flex-1 gap-[15px]">
                     <svg
@@ -145,7 +148,7 @@ export default function Sidebar() {
               </AccordionSummary>
 
               <AccordionDetails className="pr-0">
-                <ul className="ml-[95px] mt-[10px] flex flex-col gap-[5px] sidebar-dropdown">
+                <ul className="ml-[95px] mt-[10px] flex flex-col gap-[5px] sidebar-dropdown xs:ml-[40px]">
                   <li>
                     <Link
                       href={"#"}
@@ -309,7 +312,7 @@ export default function Sidebar() {
             <li className="relative">
               <Link
                 href={"#"}
-                className="text-[20px] font-bold text-gray-800 ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px]"
+                className="text-[20px] font-bold text-gray-800 ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px] xl:ml-[30px] xs:ml-[0] xs:py-[15px]"
               >
                 <div className="flex items-center flex-1 gap-[15px]">
                   <svg
@@ -333,7 +336,9 @@ export default function Sidebar() {
                     />
                   </svg>
                   <span>Talepler</span>
-                  <span className="text-[12px] text-white py-[3px] px-[9px] bg-orange-500 rounded-full">Yeni</span>
+                  <span className="text-[12px] text-white py-[3px] px-[9px] bg-orange-500 rounded-full">
+                    Yeni
+                  </span>
                 </div>
               </Link>
             </li>
@@ -341,7 +346,7 @@ export default function Sidebar() {
             <li className="relative">
               <Link
                 href={"#"}
-                className="text-[20px] font-bold text-gray-800 ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px]"
+                className="text-[20px] font-bold text-gray-800 ml-[50px] rounded-[20px] flex items-center justify-between py-[20px] px-[33px] xl:ml-[30px] xs:ml-[0] xs:py-[15px]"
               >
                 <div className="flex items-center flex-1 gap-[15px]">
                   <svg
@@ -371,7 +376,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="bg-white rounded-[40px] p-[15px] mx-[60px]">
+      <div className="bg-white rounded-[40px] p-[15px] mx-[60px] xl:mx-[40px] xs:shadow-[0_20px_40px_-34px_rgb(0,0,0,.25)]">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <img src={avatar.src} alt="Fatih G." />
