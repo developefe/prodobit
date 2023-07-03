@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FormControl, MenuItem, Select } from "@mui/material";
 
 import AddProductSteps from "@/components/add-product-steps";
+import Link from "next/link";
 
 export default function Step1() {
   // For Hour Select
@@ -78,42 +79,46 @@ export default function Step1() {
             className="bg-white/80 backdrop-blur-[5px] p-[15px] rounded-full flex items-center gap-[5px]"
             style={{ boxShadow: "0px 24px 54px -13px rgba(177, 109, 92, 0.3)" }}
           >
-            <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-red-500 border border-red-500 rounded-full py-[16px] px-[10px] text-center gap-[15px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                fill="none"
-              >
-                <path
-                  stroke="#F34A53"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M18 6 6 18M6 6l12 12"
-                />
-              </svg>
-              <span>Hayır</span>
-            </div>
+            <Link href={"#"}>
+              <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-red-500 border border-red-500 rounded-full py-[16px] px-[10px] text-center gap-[15px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  fill="none"
+                >
+                  <path
+                    stroke="#F34A53"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M18 6 6 18M6 6l12 12"
+                  />
+                </svg>
+                <span>Hayır</span>
+              </div>
+            </Link>
 
-            <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[20px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={18}
-                height={14}
-                fill="none"
-              >
-                <path
-                  stroke="#fff"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeMiterlimit={10}
-                  strokeWidth={2}
-                  d="m16.5 1.5-9.345 11L1.5 5.844"
-                />
-              </svg>
-              <span>Evet</span>
-            </div>
+            <Link href={"/oge-ekle/step-2"}>
+              <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[20px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={18}
+                  height={14}
+                  fill="none"
+                >
+                  <path
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    d="m16.5 1.5-9.345 11L1.5 5.844"
+                  />
+                </svg>
+                <span>Evet</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

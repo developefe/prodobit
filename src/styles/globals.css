@@ -355,3 +355,17 @@ tbody .MuiTableCell-root {
 .hamburger-menu span { width: 100%; height: 2px; background: #030124; transition: .4s;}
 .hamburger-menu.sidebar-active span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
 .hamburger-menu.sidebar-active span:nth-child(2) { transform: rotate(-45deg) translate(1px,-9px); }
+
+/* Mobile Header */
+
+/* Step 2 Select Menu */
+
+.step2-brand-select { background: none !important; padding: 0; }
+.step2-brand-select .MuiTouchRipple-root { display: none; }
+.step2-brand-select .MuiButtonBase-root { background: none; padding: 8.6px 25px; max-width: 140px; width: 140px; text-align: center; }
+.step2-brand-select .MuiButtonBase-root .MuiTypography-root { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-size: 15px; font-family: Inter; font-style: normal; font-weight: 400; line-height: 120%; color: #242529; }
+.step2-brand-select .MuiPaper-root { box-shadow: 0px 37px 100px -13px rgb(104 48 48 / 17%); margin-top: 15px; border-radius: 20px; padding: 10px; width: 350px; }
+.step2-brand-select .MuiPaper-root ul { padding: 0; gap: 10px; display: flex; flex-direction: column; }
+.step2-brand-select .MuiPaper-root ul li { max-width: 100%; width: 100%; color: #000 !important; font-size: 15px; font-style: normal; font-weight: 400; line-height: 120%; opacity: 1; border-radius: 10px; padding: 11px 13px; position: relative; background: none !important; }
+.step2-brand-select .MuiPaper-root ul li.Mui-disabled {background: #F8F8FA !important;padding: 20px;}
+.step2-brand-select .MuiPaper-root ul li + li:before { content: ""; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; border: 1px solid #AEADAF; border-radius: 5px; }

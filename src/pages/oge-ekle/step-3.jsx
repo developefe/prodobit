@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Box, Tab, Tabs } from "@mui/material";
 
 import AddProductSteps from "@/components/add-product-steps";
+import Link from "next/link";
 
 export default function Step3() {
   // Tab value
@@ -463,6 +464,7 @@ export default function Step3() {
             className="bg-white/80 backdrop-blur-[5px] p-[15px] rounded-full flex items-center gap-[5px] shadow-2xl shadow-red-10/40"
             style={{ boxShadow: "0px 24px 54px -13px rgba(177, 109, 92, 0.3)" }}
           >
+            <Link href={"/oge-ekle/step-2"}>
             <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-red-500 border border-red-500 rounded-full py-[16px] px-[10px] text-center gap-[15px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -480,24 +482,27 @@ export default function Step3() {
               </svg>
               <span>İptal</span>
             </div>
-
-            <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[10px]">
-              <span>Sonraki</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                fill="none"
-              >
-                <path
-                  stroke="#fff"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 12h14M12 5l7 7-7 7"
-                />
-              </svg>
-            </div>
+            </Link>
+            
+            <Link href={"/oge-ekle/step-4"}>
+              <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[10px]">
+                <span>Sonraki</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  fill="none"
+                >
+                  <path
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 12h14M12 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

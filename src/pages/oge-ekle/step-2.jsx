@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-import { FormControl, MenuItem, Select } from "@mui/material";
+import { Button, FormControl, List, ListItem, ListItemText, Menu, MenuItem, Select } from "@mui/material";
 
 import brandImgHolder from "@/assets/img/brand-image-holder.png";
 import excel from "@/assets/img/excel.svg";
 
 import AddProductSteps from "@/components/add-product-steps";
+import Link from "next/link";
 
 export default function Step2() {
   // For Brand Select
@@ -15,6 +16,36 @@ export default function Step2() {
   const selectHandleChange = (event) => {
     setBrand(event.target.value);
   };
+
+  const [addBrand, setAddBrand] = useState(false);
+
+  const addBrandHandle = (event) => {
+    setAddBrand(!addBrand);
+  };
+
+  const options = [
+    'Nike',
+    'Deneme 1',
+    'Deneme 2',
+    'Deneme 3',
+  ];
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const open = Boolean(anchorEl);
+  const handleClickListItem = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    setSelectedIndex(index);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div className="flex flex-col">
       <AddProductSteps />
@@ -38,38 +69,53 @@ export default function Step2() {
 
               <div className="flex flex-wrap gap-[10px]">
                 <div className="flex items-center justify-center border-[1px] border-green-600 rounded-full">
-                  <FormControl fullWidth className="step-2-select">
-                    <Select
-                      id="demo-simple-select"
-                      defaultValue={brand}
-                      value={brand}
-                      onChange={selectHandleChange}
-                      IconComponent={() => (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={24}
-                          height={25}
-                          fill="none"
-                        >
-                          <path
-                            stroke="#0C3F34"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeMiterlimit={10}
-                            strokeWidth={1.5}
-                            d="m19.92 9.45-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 9.45"
-                          />
-                        </svg>
-                      )}
+                  <List className="step2-brand-select"
+                    component="nav"
+                    aria-label="Device settings"
+                  >
+                    <ListItem
+                      button
+                      id="lock-button"
+                      aria-haspopup="listbox"
+                      aria-controls="lock-menu"
+                      aria-label=""
+                      aria-expanded={open ? "true" : undefined}
+                      onClick={handleClickListItem}
                     >
-                      <MenuItem value={nike}>Nike</MenuItem>
-                      <MenuItem value={2}>Adidas</MenuItem>
-                      <MenuItem value={3}>Puma</MenuItem>
-                    </Select>
-                  </FormControl>
+                      <ListItemText
+                        primary=""
+                        secondary={options[selectedIndex]}
+                      />
+                    </ListItem>
+                  </List>
+                  <Menu
+                    id="lock-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    className="step2-brand-select"
+                    MenuListProps={{
+                      "aria-labelledby": "lock-button",
+                      role: "listbox",
+                    }}
+                  >
+                    {options.map((option, index) => (
+                      <MenuItem
+                        key={option}
+                        disabled={index === 0}
+                        selected={index === selectedIndex}
+                        onClick={(event) => handleMenuItemClick(event, index)}
+                      >
+                        {option}
+                      </MenuItem>
+                    ))}
+                  </Menu>
                 </div>
 
-                <div className="flex items-center justify-center py-[10px] px-[30px] border-[1px] border-green-600 rounded-full cursor-pointer">
+                <div
+                  onClick={addBrandHandle}
+                  className="relative flex items-center justify-center py-[10px] px-[30px] border-[1px] border-green-600 rounded-full cursor-pointer"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
@@ -84,6 +130,24 @@ export default function Step2() {
                       d="M12 5.5v14M5 12.5h14"
                     />
                   </svg>
+                  {addBrand && (
+                    <div className="flex flex-col gap-1 absolute top-[115%] left-[50%] translate-x-[-50%]">
+                      <div className="flex flex-col p-2">
+                        <div className="w-[329px] h-[120px] p-5 bg-gray-50 rounded-lg justify-center items-center gap-2.5 inline-flex">
+                          <div className="p-2.5 justify-start items-center gap-2.5 flex">
+                            <div className="w-[60px] h-[60px] relative">
+                              <div className="w-2.5 h-2.5 left-[32.50px] top-[17.50px] absolute rounded border-[1px] border-emerald-900" />
+                            </div>
+                            <div className="text-black text-[22px] font-normal leading-relaxed">
+                              Logo
+                              <br />
+                              Ekle
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -240,41 +304,45 @@ export default function Step2() {
             className="bg-white/80 backdrop-blur-[5px] p-[15px] rounded-full flex items-center gap-[5px] shadow-2xl shadow-red-10/40"
             style={{ boxShadow: "0px 24px 54px -13px rgba(177, 109, 92, 0.3)" }}
           >
-            <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-red-500 border border-red-500 rounded-full py-[16px] px-[10px] text-center gap-[15px]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                fill="none"
-              >
-                <path
-                  stroke="#F34A53"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M18 6 6 18M6 6l12 12"
-                />
-              </svg>
-              <span>İptal</span>
-            </div>
+            <Link href={"/oge-ekle/step-1"}>
+              <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-red-500 border border-red-500 rounded-full py-[16px] px-[10px] text-center gap-[15px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  fill="none"
+                >
+                  <path
+                    stroke="#F34A53"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M18 6 6 18M6 6l12 12"
+                  />
+                </svg>
+                <span>İptal</span>
+              </div>
+            </Link>
 
-            <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[10px]">
-              <span>Sonraki</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                fill="none"
-              >
-                <path
-                  stroke="#fff"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 12h14M12 5l7 7-7 7"
-                />
-              </svg>
-            </div>
+            <Link href={"/oge-ekle/step-3"}>
+              <div className="cursor-pointer w-[150px] flex items-center justify-center text-[22px] font-light text-white bg-green-600 border border-green-600 rounded-full py-[16px] px-[10px] text-center gap-[10px]">
+                <span>Sonraki</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  fill="none"
+                >
+                  <path
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 12h14M12 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

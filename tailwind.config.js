@@ -123,10 +123,9 @@ module.exports = {
       'turquoise-900': '#06626b',
     },
     screens: {
-      '2xl': [
-        {'max': '1680px'},
-        {'min': '1681px'},
-      ],
+      '2xl': {
+        'max': '1680px'
+      },
       'xl':{
         'max': '1440px',
       },
