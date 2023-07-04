@@ -211,6 +211,13 @@ tbody .MuiTableCell-root {
   pointer-events: none;
 }
 
+.MuiFormControl-root.step-2-group-select { display: flex; align-items: center; justify-content: center; margin: 0; width: 100%; background: #F8F8FA; border-radius: 10px;}
+.MuiFormControl-root.step-2-group-select .MuiSelect-select { width: 100%; min-width: 60px; text-align: left; padding: 16px 40px 16px 20px !important; font-size: 15px; font-weight: normal; line-height: 1; display: flex; align-items: center; gap: 5px; border-radius: 20px;}
+.MuiFormControl-root.step-2-group-select .MuiInputBase-root svg { right: 20px; }
+.MuiFormControl-root.step-2-group-select .MuiInputBase-root svg { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.MuiFormControl-root.step-2-group-select .MuiInputBase-root { height: 100%; padding: 0; width: 100%}
+.step-2-group-webkit::-webkit-scrollbar { width: 0; height: 0; }
+
 /* Add Product Step 3 */
 .step-3-tabs .MuiTab-root:first-child {
   margin-left: 0;

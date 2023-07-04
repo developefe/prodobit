@@ -1,6 +1,15 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
-import { Button, FormControl, List, ListItem, ListItemText, Menu, MenuItem, Select } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  List,
+  ListItem,
+  ListItemText,
+  Menu,
+  MenuItem,
+  Select,
+} from "@mui/material";
 
 import brandImgHolder from "@/assets/img/brand-image-holder.png";
 import excel from "@/assets/img/excel.svg";
@@ -23,12 +32,14 @@ export default function Step2() {
     setAddBrand(!addBrand);
   };
 
-  const options = [
-    'Nike',
-    'Deneme 1',
-    'Deneme 2',
-    'Deneme 3',
-  ];
+  // For Width Select
+  const [selectGroup, setSelectGroup] = useState(1);
+
+  const selectGroupHandleChange = (event) => {
+    setSelectGroup(event.target.value);
+  };
+
+  const options = ["Nike", "Deneme 1", "Deneme 2", "Deneme 3"];
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -44,6 +55,48 @@ export default function Step2() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  // Drag n Drop File
+
+  // rebder files
+
+  const renderFiles = function (e) {
+    return e.name;
+  }
+
+  // drag state
+  const [dragActive, setDragActive] = React.useState(false);
+
+  // handle drag events
+  const handleDrag = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      // at least one file has been dropped so do something
+      var array = e.dataTransfer.files;
+      Array.prototype.forEach.call(e.dataTransfer.files, function(file) { alert('Yüklenilen dosya adı: ' +file.name+ '   Boyut: '+ file.size+'mb') });
+    }
+  };
+
+  // triggers when file is selected with click
+  const handleChange = function (e) {
+    e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+      // at least one file has been selected so do something
+      // handleFiles(e.target.files);
+    }
   };
 
   return (
@@ -69,7 +122,8 @@ export default function Step2() {
 
               <div className="flex flex-wrap gap-[10px]">
                 <div className="flex items-center justify-center border-[1px] border-green-600 rounded-full">
-                  <List className="step2-brand-select"
+                  <List
+                    className="step2-brand-select"
                     component="nav"
                     aria-label="Device settings"
                   >
@@ -112,39 +166,128 @@ export default function Step2() {
                   </Menu>
                 </div>
 
-                <div
-                  onClick={addBrandHandle}
-                  className="relative flex items-center justify-center py-[10px] px-[30px] border-[1px] border-green-600 rounded-full cursor-pointer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={25}
-                    fill="none"
+                <div className="relative">
+                  <div
+                    onClick={addBrandHandle}
+                    className="flex items-center justify-center py-[10px] px-[30px] border-[1px] border-green-600 rounded-full cursor-pointer"
                   >
-                    <path
-                      stroke="#0C3F34"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M12 5.5v14M5 12.5h14"
-                    />
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={24}
+                      height={25}
+                      fill="none"
+                    >
+                      <path
+                        stroke="#0C3F34"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M12 5.5v14M5 12.5h14"
+                      />
+                    </svg>
+                  </div>
                   {addBrand && (
-                    <div className="flex flex-col gap-1 absolute top-[115%] left-[50%] translate-x-[-50%]">
-                      <div className="flex flex-col p-2">
-                        <div className="w-[329px] h-[120px] p-5 bg-gray-50 rounded-lg justify-center items-center gap-2.5 inline-flex">
-                          <div className="p-2.5 justify-start items-center gap-2.5 flex">
+                    <div className="flex flex-col gap-1 rounded-[20px] absolute z-[2] top-[115%] left-[50%] translate-x-[-50%]">
+                      <div className="flex flex-col p-2 rounded-[20px] bg-white shadow-[0_20px_44px_5px_rgba(104,48,48,0.12)]">
+                        <form
+                          className="bg-gray-200 rounded-lg gap-2.5 inline-flex mb-[35px] relative"
+                          onDragEnter={handleDrag}
+                          onSubmit={(e) => e.preventDefault()}
+                        >
+                          <input
+                            className="absolute opacity-0 invisible w-[100%] h-[1px] top-[70%]"
+                            type="file"
+                            id="input-file-upload"
+                            multiple={true}
+                            onChange={handleChange}
+                          />
+                          <label
+                            id="label-file-upload"
+                            htmlFor="input-file-upload"
+                            className="w-[329px] h-[120px] p-5 justify-center items-center gap-2.5 flex"
+                          >
                             <div className="w-[60px] h-[60px] relative">
-                              <div className="w-2.5 h-2.5 left-[32.50px] top-[17.50px] absolute rounded border-[1px] border-emerald-900" />
+                              <svg
+                                width="60"
+                                height="60"
+                                viewBox="0 0 60 60"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <rect
+                                  x="32.5"
+                                  y="17.5"
+                                  width="10"
+                                  height="10"
+                                  rx="4"
+                                  stroke="#0C3F34"
+                                  stroke-width="1.5"
+                                />
+                                <path
+                                  d="M11.7952 43.0034L16.1425 38.6562C20.205 34.5937 26.7916 34.5937 30.8541 38.6562L35.2014 43.0034M35.2014 43.0034L36.9622 41.2425C40.2063 37.9984 45.5358 38.2402 48.4728 41.7647L49.5051 43.0034M35.2014 43.0034L41.7031 49.5051M8.38219 37.6239C7.20594 32.6094 7.20594 27.3906 8.38219 22.3761C10.0109 15.4325 15.4325 10.0109 22.3761 8.38219C27.3906 7.20594 32.6094 7.20594 37.6239 8.38219C44.5675 10.0109 49.9891 15.4325 51.6178 22.3761C52.7941 27.3906 52.7941 32.6094 51.6178 37.6239C49.9891 44.5675 44.5675 49.9891 37.6239 51.6178C32.6094 52.7941 27.3906 52.7941 22.3761 51.6178C15.4325 49.9891 10.0109 44.5675 8.38219 37.6239Z"
+                                  stroke="#0C3F34"
+                                  stroke-width="1.5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
                             </div>
                             <div className="text-black text-[22px] font-normal leading-relaxed">
                               Logo
                               <br />
                               Ekle
                             </div>
-                          </div>
+                          </label>
+                          {dragActive && (
+                            <div
+                              className="absolute w-[100%] h-[100%] rounded-[10px] top-0 left-0 right-0 bottom-0"
+                              id="drag-file-element"
+                              onDragEnter={handleDrag}
+                              onDragLeave={handleDrag}
+                              onDragOver={handleDrag}
+                              onDrop={handleDrop}
+                            ></div>
+                          )}
+                        </form>
+                        <div className="text-stone-500 text-[15px] font-medium leading-tight mb-[25px] px-[25px]">
+                          Marka Adı Belirle
                         </div>
+                        <input
+                          className="w-[100%] text-black text-[37px] font-normal leading-10 mb-[35px] px-[25px] outline-none"
+                          type="text"
+                          defaultValue={"BK23SR25"}
+                        />
+                        <div className="mx-[20px] h-[1px] border border-gray-400 mb-7"></div>
+                        <FormControl fullWidth className="step-2-group-select">
+                          <Select
+                            defaultValue={selectGroup}
+                            value={selectGroup}
+                            onChange={selectGroupHandleChange}
+                            IconComponent={() => (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width={14}
+                                height={15}
+                                fill="none"
+                              >
+                                <path
+                                  stroke="#292D32"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeMiterlimit={10}
+                                  d="M11.62 5.72 7.817 9.525c-.45.45-1.185.45-1.634 0L2.38 5.721"
+                                />
+                              </svg>
+                            )}
+                          >
+                            <MenuItem value={1}>Ana Grup Belirle</MenuItem>
+                            <MenuItem value={2}>Buraya Grup Gelecek</MenuItem>
+                            <MenuItem value={3}>Buraya Grup Gelecek</MenuItem>
+                          </Select>
+                        </FormControl>
+                      </div>
+                      <div className="w-[100%] cursor-pointer px-2.5 py-[20px] mt-1 bg-green-600 rounded-2xl shadow flex-col justify-start items-center gap-5 inline-flex text-white text-[22px] font-normal leading-relaxed">
+                        Kaydet
                       </div>
                     </div>
                   )}
