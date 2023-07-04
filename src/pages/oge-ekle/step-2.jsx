@@ -204,8 +204,7 @@ export default function Step2() {
                           <label
                             id="label-file-upload"
                             htmlFor="input-file-upload"
-                            className="w-[329px] h-[120px] p-5 justify-center items-center gap-2.5 flex"
-                          >
+                            className="w-[329px] h-[140px] p-5 pb-8 justify-center items-center gap-2.5 flex" >
                             <div className="w-[60px] h-[60px] relative">
                               <svg
                                 width="60"
@@ -237,6 +236,7 @@ export default function Step2() {
                               <br />
                               Ekle
                             </div>
+                            <div className="absolute bottom-1 left-[50%] translate-x-[-50%] text-gray-700 text-[10px]">Tıkla veya sürükle bırak</div>
                           </label>
                           {dragActive && (
                             <div
